@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme version="2.0" title="" description="">
+	<nodes>
+		<node id="0" name="CSV File Import" qualified_name="Orange.widgets.data.owcsvimport.OWCSVFileImport" project_name="Orange3" version="" title="CSV File Import" position="(55.0, 239.0)" />
+		<node id="1" name="Impute" qualified_name="Orange.widgets.data.owimpute.OWImpute" project_name="Orange3" version="" title="Impute" position="(156.0, 239.0)" />
+		<node id="2" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" project_name="Orange3" version="" title="Select Columns" position="(251.0, 238.0)" />
+		<node id="3" name="Test and Score" qualified_name="Orange.widgets.evaluate.owtestandscore.OWTestAndScore" project_name="Orange3" version="" title="Test and Score" position="(470.0, 322.0)" />
+		<node id="4" name="CSV File Import" qualified_name="Orange.widgets.data.owcsvimport.OWCSVFileImport" project_name="Orange3" version="" title="CSV File Import (1)" position="(56.0, 416.0)" />
+		<node id="5" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" project_name="Orange3" version="" title="Select Columns (1)" position="(352.0, 418.0)" />
+		<node id="6" name="kNN" qualified_name="Orange.widgets.model.owknn.OWKNNLearner" project_name="Orange3" version="" title="kNN" position="(348.0, 239.0)" />
+	</nodes>
+	<links>
+		<link id="0" source_node_id="0" sink_node_id="1" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="1" source_node_id="4" sink_node_id="5" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="2" source_node_id="5" sink_node_id="3" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="train_data" />
+		<link id="3" source_node_id="1" sink_node_id="2" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="4" source_node_id="2" sink_node_id="6" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="5" source_node_id="6" sink_node_id="3" source_channel="Learner" sink_channel="Learner" enabled="true" source_channel_id="learner" sink_channel_id="learner" />
+	</links>
+	<annotations />
+	<thumbnail />
+	<node_properties>
+		<properties node_id="0" format="literal">{'_session_items': [], '_session_items_v2': [({'type': 'AbsPath', 'path': '/Users/danielmontes/Downloads/gene_files/Genes_relation.data'}, {'encoding': 'utf-8', 'delimiter': ',', 'quotechar': '"', 'doublequote': True, 'skipinitialspace': True, 'quoting': 0, 'columntypes': [{'start': 0, 'stop': 9, 'value': 'Auto'}], 'rowspec': [{'start': 0, 'stop': 1, 'value': 'Header'}], 'decimal_separator': '.', 'group_separator': ''})], 'compatibility_mode': False, 'controlAreaVisible': True, 'dialog_state': {'directory': '/Users/danielmontes/Downloads/gene_files', 'filter': 'Text - comma separated (*.csv, *)'}, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02\x1a\x00\x00\x00\xd9\x00\x00\x03r\x00\x00\x02P\x00\x00\x02\x1a\x00\x00\x00\xf5\x00\x00\x03r\x00\x00\x02P\x00\x00\x00\x00\x02\x00\x00\x00\x05\xa0\x00\x00\x02\x1a\x00\x00\x00\xf5\x00\x00\x03r\x00\x00\x02P', '__version__': 3}</properties>
+		<properties node_id="1" format="pickle">gASV6gEAAAAAAAB9lCiMFV9kZWZhdWx0X21ldGhvZF9pbmRleJRLAowKYXV0b2NvbW1pdJSIjBJj
+b250cm9sQXJlYVZpc2libGWUiIwVZGVmYXVsdF9udW1lcmljX3ZhbHVllEcAAAAAAAAAAIwMZGVm
+YXVsdF90aW1llEsAjBNzYXZlZFdpZGdldEdlb21ldHJ5lENCAdnQywADAAAAAAGGAAAAkQAABAUA
+AAKYAAABhgAAAK0AAAQFAAACmAAAAAACAAAABaAAAAGGAAAArQAABAUAAAKYlIwLX192ZXJzaW9u
+X1+USwGMEGNvbnRleHRfc2V0dGluZ3OUXZSMFW9yYW5nZXdpZGdldC5zZXR0aW5nc5SMB0NvbnRl
+eHSUk5QpgZR9lCiMBnZhbHVlc5R9lCiMGl92YXJpYWJsZV9pbXB1dGF0aW9uX3N0YXRllH2USvz/
+//+GlGgISwF1jAphdHRyaWJ1dGVzlH2UKIwJRXNzZW50aWFslEsBjAVDbGFzc5RLAYwHQ29tcGxl
+eJRLAYwJUGhlbm90eXBllEsBjApDaHJvbW9zb21llEsCjAhGdW5jdGlvbpRLAYwMTG9jYWxpemF0
+aW9ulEsBdYwFbWV0YXOUfZQojAZHZW5lSUSUSwOMBU1vdGlmlEsDdXViYXUu
+</properties>
+		<properties node_id="2" format="pickle">gASVRgIAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNpZ25v
+cmVfbmV3X2ZlYXR1cmVzlImME3NhdmVkV2lkZ2V0R2VvbWV0cnmUQ0IB2dDLAAMAAAAAAYYAAACX
+AAAEBQAAApIAAAGGAAAAswAABAUAAAKSAAAAAAAAAAAFoAAAAYYAAACzAAAEBQAAApKUjBJ1c2Vf
+aW5wdXRfZmVhdHVyZXOUiYwLX192ZXJzaW9uX1+USwGMEGNvbnRleHRfc2V0dGluZ3OUXZSMFW9y
+YW5nZXdpZGdldC5zZXR0aW5nc5SMB0NvbnRleHSUk5QpgZR9lCiMBnZhbHVlc5R9lCiMEWRvbWFp
+bl9yb2xlX2hpbnRzlH2UKIwJRXNzZW50aWFslEsBhpSMCWF0dHJpYnV0ZZRLAIaUjAVDbGFzc5RL
+AYaUaBVLAYaUjAdDb21wbGV4lEsBhpRoFUsChpSMCVBoZW5vdHlwZZRLAYaUaBVLA4aUjApDaHJv
+bW9zb21llEsChpRoFUsEhpSMCEZ1bmN0aW9ulEsBhpRoFUsFhpSMDExvY2FsaXphdGlvbpRLAYaU
+jAVjbGFzc5RLAIaUjAZHZW5lSUSUSwOGlIwEbWV0YZRLAIaUjAVNb3RpZpRLA4aUaCxLAYaUdUr+
+////hpRoB0sBdYwKYXR0cmlidXRlc5R9lChoE0sBaBdLAWgaSwFoHUsBaCBLAmgjSwFoJksBdYwF
+bWV0YXOUfZQoaCpLA2guSwN1dWJhdS4=
+</properties>
+		<properties node_id="3" format="pickle">gASVzQMAAAAAAAB9lCiMFGNvbXBhcmlzb25fY3JpdGVyaW9ulEsAjBJjb250cm9sQXJlYVZpc2li
+bGWUiIwNY3Zfc3RyYXRpZmllZJSIjAduX2ZvbGRzlEsCjAluX3JlcGVhdHOUSwOMCnJlc2FtcGxp
+bmeUSwCMBHJvcGWURz+5mZmZmZmajAtzYW1wbGVfc2l6ZZRLCYwTc2F2ZWRXaWRnZXRHZW9tZXRy
+eZRDQgHZ0MsAAwAAAAABQAAAAI0AAARLAAACnAAAAUAAAACpAAAESwAAApwAAAAAAAAAAAWgAAAB
+QAAAAKkAAARLAAACnJSMEnNodWZmbGVfc3RyYXRpZmllZJSIjAh1c2Vfcm9wZZSJjAtzY29yZV90
+YWJsZZR9lIwQc2hvd19zY29yZV9oaW50c5R9lCiMBk1vZGVsX5SIjAZUcmFpbl+UiYwFVGVzdF+U
+iYwCQ0GUiIwXUHJlY2lzaW9uUmVjYWxsRlN1cHBvcnSUiIwLVGFyZ2V0U2NvcmWUiIwJUHJlY2lz
+aW9ulIiMBlJlY2FsbJSIjAJGMZSIjANBVUOUiIwHTG9nTG9zc5SJjAtTcGVjaWZpY2l0eZSJjBdN
+YXR0aGV3c0NvcnJDb2VmZmljaWVudJSIjANNU0WUiIwEUk1TRZSIjANNQUWUiIwETUFQRZSIjAJS
+MpSIjAZDVlJNU0WUiYwPQ2x1c3RlcmluZ1Njb3JllIiMClNpbGhvdWV0dGWUiIwXQWRqdXN0ZWRN
+dXR1YWxJbmZvU2NvcmWUiHVzjAtfX3ZlcnNpb25fX5RLBIwQY29udGV4dF9zZXR0aW5nc5RdlIwV
+b3Jhbmdld2lkZ2V0LnNldHRpbmdzlIwHQ29udGV4dJSTlCmBlH2UKIwGdmFsdWVzlH2UKIwPY2xh
+c3Nfc2VsZWN0aW9ulIwhKE5vbmUsIHNob3cgYXZlcmFnZSBvdmVyIGNsYXNzZXMplEr/////hpSM
+DGZvbGRfZmVhdHVyZZROSv7///+GlIwVZm9sZF9mZWF0dXJlX3NlbGVjdGVklIlK/v///4aUaA19
+lGgnSwR1jAphdHRyaWJ1dGVzlCiMCUVzc2VudGlhbJRLAYaUjAdDb21wbGV4lEsBhpSMCVBoZW5v
+dHlwZZRLAYaUjApDaHJvbW9zb21llEsChpSMCEZ1bmN0aW9ulEsChpSMDExvY2FsaXphdGlvbpRL
+AoaUdJSMBW1ldGFzlIwGR2VuZUlElEsDhpSMBU1vdGlmlEsDhpSGlIwKY2xhc3NfdmFyc5SMBUNs
+YXNzlEsBhpSFlHViYXUu
+</properties>
+		<properties node_id="4" format="literal">{'_session_items': [], '_session_items_v2': [({'type': 'AbsPath', 'path': '/Users/danielmontes/Downloads/gene_files/Genes_relation.test'}, {'encoding': 'utf-8', 'delimiter': ',', 'quotechar': '"', 'doublequote': True, 'skipinitialspace': True, 'quoting': 0, 'columntypes': [{'start': 0, 'stop': 9, 'value': 'Auto'}], 'rowspec': [{'start': 0, 'stop': 1, 'value': 'Header'}], 'decimal_separator': '.', 'group_separator': ''})], 'compatibility_mode': False, 'controlAreaVisible': True, 'dialog_state': {'directory': '/Users/danielmontes/Downloads/gene_files', 'filter': 'Text - comma separated (*.csv, *)'}, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02\x1a\x00\x00\x00\xd9\x00\x00\x03r\x00\x00\x02P\x00\x00\x02\x1a\x00\x00\x00\xf5\x00\x00\x03r\x00\x00\x02P\x00\x00\x00\x00\x02\x00\x00\x00\x05\xa0\x00\x00\x02\x1a\x00\x00\x00\xf5\x00\x00\x03r\x00\x00\x02P', '__version__': 3}</properties>
+		<properties node_id="5" format="pickle">gASVRgIAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNpZ25v
+cmVfbmV3X2ZlYXR1cmVzlImME3NhdmVkV2lkZ2V0R2VvbWV0cnmUQ0IB2dDLAAMAAAAAAYYAAACX
+AAAEBQAAApIAAAGGAAAAswAABAUAAAKSAAAAAAAAAAAFoAAAAYYAAACzAAAEBQAAApKUjBJ1c2Vf
+aW5wdXRfZmVhdHVyZXOUiYwLX192ZXJzaW9uX1+USwGMEGNvbnRleHRfc2V0dGluZ3OUXZSMFW9y
+YW5nZXdpZGdldC5zZXR0aW5nc5SMB0NvbnRleHSUk5QpgZR9lCiMBnZhbHVlc5R9lCiMEWRvbWFp
+bl9yb2xlX2hpbnRzlH2UKIwJRXNzZW50aWFslEsBhpSMCWF0dHJpYnV0ZZRLAIaUjAdDb21wbGV4
+lEsBhpRoFUsBhpSMCVBoZW5vdHlwZZRLAYaUaBVLAoaUjApDaHJvbW9zb21llEsChpRoFUsDhpSM
+CEZ1bmN0aW9ulEsChpRoFUsEhpSMDExvY2FsaXphdGlvbpRLAoaUaBVLBYaUjAVDbGFzc5RLAYaU
+jAVjbGFzc5RLAIaUjAZHZW5lSUSUSwOGlIwEbWV0YZRLAIaUjAVNb3RpZpRLA4aUaCxLAYaUdUr+
+////hpRoB0sBdYwKYXR0cmlidXRlc5R9lChoE0sBaCZLAWgXSwFoGksBaB1LAmggSwJoI0sCdYwF
+bWV0YXOUfZQoaCpLA2guSwN1dWJhdS4=
+</properties>
+		<properties node_id="6" format="literal">{'auto_apply': True, 'controlAreaVisible': True, 'learner_name': '', 'metric_index': 0, 'n_neighbors': 5, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02K\x00\x00\x00\xff\x00\x00\x03@\x00\x00\x02+\x00\x00\x02K\x00\x00\x01\x1b\x00\x00\x03@\x00\x00\x02+\x00\x00\x00\x00\x02\x00\x00\x00\x05\xa0\x00\x00\x02K\x00\x00\x01\x1b\x00\x00\x03@\x00\x00\x02+', 'weight_index': 0, '__version__': 1}</properties>
+	</node_properties>
+	<session_state>
+		<window_groups />
+	</session_state>
+</scheme>
