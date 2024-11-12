@@ -29,6 +29,81 @@ public class Homework3 {
         saveClusters(data, assignments, k);
     }
 
+    private List<double[]> initializeCentroids(List<double[]> data, int k) {
+        List<double[]> centroids = new ArrayList<>();
+        Random random = new Random();
+        Set<Integer> chosenIndices = new HashSet<>();
+        while (centroids.size() < k) {
+            int index = random.nextInt(data.size());
+            if (!chosenIndices.contains(index)) {
+                centroids.add(data.get(index));
+                chosenIndices.add(index);
+            }
+        }
+        return centroids;
+    }
+
+    private List<Integer> kMeansClustering(List<double[]> data, List<double[]> centroids, int k) {
+        List<Integer> assignments = new ArrayList<>(Collections.nCopies(data.size(), -1));
+        boolean changed = true;
+
+        while (changed) {
+            changed = false;
+
+            // Assign data points to the nearest centroid
+            for (int i = 0; i < data.size(); i++) {
+                double[] point = data.get(i);
+                int closestCentroid = -1;
+                double minDistance = Double.MAX_VALUE;
+
+                for (int j = 0; j < centroids.size(); j++) {
+                    double distance = euclideanDistance(point, centroids.get(j));
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        closestCentroid = j;
+                    }
+                }
+
+                if (assignments.get(i) != closestCentroid) {
+                    assignments.set(i, closestCentroid);
+                    changed = true;
+                }
+            }
+
+            // Update centroids
+            List<double[]> newCentroids = new ArrayList<>(Collections.nCopies(k, null));
+            int[] counts = new int[k];
+
+            for (int i = 0; i < data.size(); i++) {
+                int cluster = assignments.get(i);
+                if (newCentroids.get(cluster) == null) {
+                    newCentroids.set(cluster, new double[data.get(0).length]);
+                }
+                double[] centroid = newCentroids.get(cluster);
+                double[] point = data.get(i);
+
+                for (int j = 0; j < point.length; j++) {
+                    centroid[j] += point[j];
+                }
+                counts[cluster]++;
+            }
+
+            for (int i = 0; i < k; i++) {
+                if (counts[i] > 0) {
+                    double[] centroid = newCentroids.get(i);
+                    for (int j = 0; j < centroid.length; j++) {
+                        centroid[j] /= counts[i];
+                    }
+                } else {
+                    newCentroids.set(i, centroids.get(i)); // Keep the old centroid if no points are assigned
+                }
+            }
+
+            centroids = newCentroids;
+        }
+
+        return assignments;
+    }
 
     private double euclideanDistance(double[] a, double[] b) {
         double sum = 0;
