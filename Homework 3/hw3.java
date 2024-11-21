@@ -1,16 +1,16 @@
 import java.io.*;
 import java.util.*;
 
-public class Homework3 {
+public class Hw3 {
     public static void main(String[] args) throws IOException {
         // Create a new instance of the class
-        Homework3 hw3 = new Homework3();
+        Hw3 hw3 = new Hw3();
         // Call the method to read the file and perform clustering
         hw3.readFile();
     }
 
     public void readFile() throws IOException {
-        String filePath = "/workspaces/CSCD429/Homework 3/synthetic_control_data.txt";
+        String filePath = "/Users/danielmontes/Documents/CSCD429/Homework 3/synthetic_control_data.txt";
         List<double[]> data = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
@@ -115,7 +115,7 @@ public class Homework3 {
 
     private void saveClusters(List<double[]> data, List<Integer> assignments, int k) throws IOException {
         for (int i = 0; i < k; i++) {
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter("/workspaces/CSCD429/Homework 3/cluster_" + i + ".txt"))) {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter("/Users/danielmontes/Documents/CSCD429/Homework 3/cluster_" + (i+1) + ".txt"))) {
                 for (int j = 0; j < data.size(); j++) {
                     if (assignments.get(j) == i) {
                         writer.write(Arrays.toString(data.get(j)).replaceAll("[\\[\\],]", "") + "\n");
